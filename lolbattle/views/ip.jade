@@ -1,0 +1,9 @@
+html
+  head
+   title=title
+  body
+    script(type='text/javascript').
+      var userip;
+    script(type='text/javascript', src='https://l2.io/ip.js?var=userip')
+    script(type='text/javascript').
+      document.write("Your IP is :", userip);

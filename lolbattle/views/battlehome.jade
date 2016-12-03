@@ -1,0 +1,47 @@
+html
+  head
+    link(rel='stylesheet', type='text/css', href='/styles/styles2.css')
+    style.
+      #f1_container {
+      position: relative;
+      margin: 10px auto;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      }
+      #f1_container {
+      perspective: 100;
+      }
+      #f1_card {
+      width: 150;
+      height: 200;
+      transform-style: preserve-3d;
+      transition: all 1.0s linear;
+      }
+      #f1_container:hover #f1_card {
+      transform: rotateY(180deg);
+      box-shadow: -5px 5px 5px #aaa;
+      }
+      .face {
+      position: absolute;
+      width: 150;
+      height: 200;
+      backface-visibility: hidden;
+      }
+      .face.back {
+      display: block;
+      transform: rotateY(180deg);
+      box-sizing: content-box;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      background-color: #aaa;
+      }
+  body
+    #f1_container
+      #f1_card.shadow
+        .front.face
+          img(src='http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg' width='150' height='200' )
+        .back.face.center
+          p This is nice for exposing more information about an image.
+          p Any content can go here.
