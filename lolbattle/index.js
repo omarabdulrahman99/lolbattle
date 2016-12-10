@@ -9,7 +9,7 @@ require('dotenv').config();
 
 app.set('views', './views');
 app.set('view engine', 'jade');
- 
+
 app.use(stormpath.init(app, {
   
 
@@ -20,15 +20,12 @@ app.use(stormpath.init(app, {
 }));
 
 app.get('/', stormpath.getUser, function(req, res) {
-  res.render('home', {
-    title: 'Welcome'
-  });
+  //res.render('index', {
+    //title: 'Welcome'
+  //});
+  res.sendFile(path.join(__dirname + '/index.html'));
   
-  const ipify = require('ipify');
-  ipify((err, ip) => {
-    console.log(ip);
-    //=> '82.142.31.236'
-}); 
+  
 });
 
 //app.use('/battle',stormpath.loginRequired); 
@@ -49,5 +46,3 @@ app.on('stormpath.ready',function(){
 });
  
 app.listen(80);
-
-
