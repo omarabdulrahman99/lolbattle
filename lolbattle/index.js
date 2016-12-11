@@ -20,7 +20,7 @@ app.use(stormpath.init(app, {
 }));
 
 app.get('/', stormpath.getUser, function(req, res) {
-  res.render('index', {
+  res.render('home', {
     title: 'Welcome'
   });
   //res.sendFile(path.join(__dirname + '/index.html'));
